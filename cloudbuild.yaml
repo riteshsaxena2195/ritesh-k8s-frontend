@@ -34,9 +34,9 @@ steps:
         
         kubectl apply -f frontend.yaml
         
-        kubectl set image deployment/ritesh-frontend-deployment frontend=northamerica-northeast2-docker.pkg.dev/gcp-class-14/ritesh-banking-repo/ritesh-bank-frontend-image:latest
+        kubectl set image deployment ritesh-frontend-deployment frontend=northamerica-northeast2-docker.pkg.dev/gcp-class-14/ritesh-banking-repo/ritesh-bank-frontend-image:latest
         
-        kubectl rollout status deployment/ritesh-frontend-deployment
+        kubectl rollout status deployment ritesh-frontend-deployment
 
 images:
   - 'northamerica-northeast2-docker.pkg.dev/gcp-class-14/ritesh-banking-repo/ritesh-bank-frontend-image:latest'
