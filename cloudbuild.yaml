@@ -10,7 +10,7 @@ steps:
         'build',
         '-t', 'northamerica-northeast2-docker.pkg.dev/gcp-class-14/ritesh-banking-repo/ritesh-bank-frontend-image:latest',
         '--build-arg',
-        'REACT_APP_API_URL=https://ritesh-bank-backend-524103119199.northamerica-northeast2.run.app/api/v1',
+        'REACT_APP_API_URL=http://34.16.13.89/api/v1',
         '.'
       ]
 
