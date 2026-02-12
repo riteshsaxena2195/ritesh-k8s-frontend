@@ -1,0 +1,28 @@
+options:
+  logging: CLOUD_LOGGING_ONLY
+  
+  steps:
+  #Build docker image
+  - name: 'gcr.io/cloud-builders/docker'
+    dir: '.'
+    args:
+      [
+        'build',
+        '-t', 'northamerica-northeast2-docker.pkg.dev/gcp-class-14/ritesh-banking-repo/ritesh-bank-frontend-image:latest',
+        '--build-arg',
+        'REACT_APP_API_URL=https://ritesh-bank-backend-524103119199.northamerica-northeast2.run.app/api/v1',
+        '.'
+      ]
+
+
+#Push image to the artifactory registory
+
+  - name: 'gcr.io/cloud-builders/docker'
+    args:
+      [
+        'push',
+        'northamerica-northeast2-docker.pkg.dev/gcp-class-14/ritesh-banking-repo/ritesh-bank-frontend-image:latest'
+      ]
+
+images:
+  - 'northamerica-northeast2-docker.pkg.dev/gcp-class-14/ritesh-banking-repo/ritesh-bank-frontend-image:latest'
