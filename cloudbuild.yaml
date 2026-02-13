@@ -8,6 +8,7 @@ steps:
     args:
       [
         'build',
+         '-f', 'Dockerfile-before-https-first',
         '-t', 'northamerica-northeast2-docker.pkg.dev/gcp-class-14/ritesh-banking-repo/ritesh-bank-frontend-image:latest',
         '--build-arg',
         'REACT_APP_API_URL=http://34.16.13.89/api/v1',
